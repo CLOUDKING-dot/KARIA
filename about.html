@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>About Us - Karia</title>
+    <meta content="About Us - Karia" property="og:title"/>
+    <meta content="About Us - Karia" property="twitter:title"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link rel="icon" type="image/png" href="logo.png" /> <!-- Updated favicon placeholder -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Asap:regular,500,600,700", "Inter:100,200,300,regular,500,600,700,800,900"]
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Asap', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar {
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .nav-link:hover {
+            color: #000435;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            min-width: 200px;
+        }
+        .dropdown-menu.active {
+            display: block;
+        }
+        .dropdown-link {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+        .dropdown-link:hover {
+            color: #007bff;
+        }
+        .country-flag {
+            height: 20px;
+            border-radius: 50%;
+        }
+       .primary-btn {
+            background: #fff;
+            color: #000435;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: 2px solid #000435;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .primary-btn:hover {
+            background: #000435;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .primary-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255,255,255,0.1);
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        .primary-btn:hover::before {
+            width: 0;
+            height: 0;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .hero-section {
+            background: linear-gradient(90deg, #fff 50%, #fff9ef 100%);
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .hero-section .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            max-width: 50%;
+        }
+        .hero-content h1 {
+            font-size: 64px;
+            font-weight: 700;
+            color: #000435;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 30px;
+            font-family: 'Inter', sans-serif;
+        }
+        .actions {
+            display: flex;
+            gap: 15px;
+        }
+        .badge {
+            height: 54px;
+            border-radius: 10px;
+        }
+        .hero-image {
+            max-width: 50%;
+        }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .section {
+            padding: 30px 0;
+        }
+        .section h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            color: #000435;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 18px;
+            color: #666;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .value-card {
+            max-width: 300px;
+            text-align: left;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .value-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .value-card h3 {
+            font-size: 24px;
+            color: #000435;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .value-card p {
+            font-size: 16px;
+            color: #666;
+            margin: 0;
+        }
+        .backers-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .backers-grid img {
+            height: 120px;
+        }
+        .media-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0;
+            text-align: left;
+        }
+        .article-card {
+            text-align: left;
+        }
+        .article-card h3 {
+            font-size: 20px;
+            color: #000435;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .article-card p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .article-card a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .article-card a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: #000435;
+            color: #fff;
+            padding: 40px 0;
+        }
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-column h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .footer-column a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+        .footer-column a:hover {
+            color: #f5a623;
+        }
+        .footer-column p {
+            font-size: 16px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-column .fa {
+            color: #fff;
+            font-size: 18px;
+        }
+        .footer-column .badge {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .social-icon .fa {
+            color: #fff;
+            font-size: 20px;
+        }
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #ccc;
+            font-family: 'Inter', sans-serif;
+        }
+         /* WhatsApp Button Styles */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1002;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        .whatsapp-btn .fa {
+            color: #fff;
+            font-size: 30px;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1003;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: #fff;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .modal-header .fa-whatsapp {
+            color: #25D366;
+            font-size: 24px;
+        }
+        .modal-header h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #000435;
+            font-weight: 600;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close-modal:hover {
+            color: #000435;
+        }
+        .modal-body {
+            padding: 20px 0;
+        }
+        .modal-body p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .service-center {
+            margin-bottom: 15px;
+        }
+        .service-center a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .service-center a:hover {
+            background: #e0e0e0;
+        }
+        .service-center .fa {
+            color: #25D366;
+            font-size: 20px;
+        }
+        .service-center span {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+        .powered-by {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 35px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #666;
+        }
+        .powered-by img {
+            width: 40px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-link, .primary-btn {
+                margin: 10px 0;
+            }
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                padding: 0;
+                margin: 10px 0;
+            }
+            .dropdown-menu.active {
+                display: block;
+            }
+            .country-flags {
+                justify-content: center;
+            }
+            .hamburger {
+                display: block;
+            }
+
+            .hero-section .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content, .hero-image {
+                max-width: 100%;
+            }
+            .hero-image img {
+                margin-top: 30px;
+            }
+            .actions {
+                justify-content: center;
+            }
+            .section h2 {
+                font-size: 28px;
+            }
+            .value-card {
+                max-width: 100%;
+            }
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+            }
+            .whatsapp-btn .fa {
+                font-size: 25px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 48px;
+            }
+            .hero-content p {
+                font-size: 16px;
+            }
+            .section p {
+                font-size: 16px;
+            }
+            .value-card h3 {
+                font-size: 20px;
+            }
+            .value-card p {
+                font-size: 14px;
+            }
+            .article-card h3 {
+                font-size: 18px;
+            }
+            .article-card p {
+                font-size: 14px;
+            }
+            .modal-content {
+                width: 95%;
+                padding: 15px;
+            }
+            .modal-header h3 {
+                font-size: 18px;
+            }
+            .modal-body p {
+                font-size: 14px;
+            }
+            .service-center span {
+                font-size: 14px;
+            }
+            .powered-by {
+                font-size: 15px;
+            }
+            .powered-by img {
+                width: 25px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container">
+            <a href="#" class="w-nav-brand">
+                <img src="karia.png" alt="Karia Logo" style="height: 60px;"/> <!-- Updated name -->
+            </a>
+            <button class="hamburger">☰</button>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link"><b>Home</b></a>
+                <a href="business.html" class="nav-link"><b>Karia for Business</b></a>
+                <a href="about.html" class="nav-link"><b>About Us</b></a>
+                <a href="faq.html" class="nav-link"><b>FAQ</b></a>
+                <div class="dropdown">
+                    <div class="nav-link dropdown-toggle"><b>Join Us</b></div>
+                    <div class="dropdown-menu">
+                        <a href="career.html" class="dropdown-link"><b>Careers</b></a>
+                        <a href="driver.html" class="dropdown-link"><b>Driver</b></a>
+                        <a href="agent.html" class="dropdown-link"><b>Agent</b></a>
+                        <a href="business.html" class="dropdown-link"><b>Karia for Business</b></a>
+                    </div>
+                </div>
+                <img src="12.png" class="country-flag"/>
+                <a href="#" class="primary-btn">Download App</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div id="Hero-Section" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About Karia</h1>
+                <p>Karia's mission is to empower communities to thrive sustainably. We believe that everyone in cities should have access to fast, eco-friendly delivery services at a click of a button. We are a venture-backed startup, currently expanding across Africa, aiming to become the green logistics super app.</p>
+                <div class="actions">
+                    <a href="#" target="_blank">
+                        <img src="1.png" alt="Google Play" class="badge"/>
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="2.png" alt="App Store" class="badge"/>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="14.png" alt="App Screens"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Drivers Community -->
+    <div class="section">
+        <div class="container">
+            <h2>Our Drivers Community</h2>
+            <img src="16.png" alt="Drivers Community" style="width: 50%; display: block; margin: 0 auto 10px;"/>
+            <p>Our community of Karia drivers receive extensive training to make them the safest and most professional EV drivers on the streets. When drivers join the Karia community, they see a significant increase in their business, providing impact to themselves, their families, and the wider community.</p>
+        </div>
+    </div>
+
+    <!-- Our Values -->
+    <div class="section">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="grid">
+                <div class="value-card">
+                    <img src="20.png" alt="Community Icon"/>
+                    <h3>Community</h3>
+                    <p>We started as a small group of eco-conscious drivers and we never forget this. We care about our community of staff, drivers, agents, and customers.</p>
+                </div>
+                <div class="value-card">
+                    <img src="21.png" alt="Sustainability Icon"/>
+                    <h3>Sustainability</h3>
+                    <p>Our electric fleet powers eco-friendly deliveries, preserving the planet for future generations.</p>
+                </div>
+                <div class="value-card">
+                    <img src="17.png" alt="Innovation Icon"/>
+                    <h3>Innovation</h3>
+                    <p>We challenge the status quo with smart solutions that make logistics greener and faster.</p>
+                </div>
+                <div class="value-card">
+                    <img src="19.png" alt="Trust Icon"/>
+                    <h3>Trust</h3>
+                    <p>We expect customers to trust our drivers and agents, so we build trust in everything we do.</p>
+                </div>
+                <div class="value-card">
+                    <img src="18.png" alt="Integrity Icon"/>
+                    <h3>Integrity</h3>
+                    <p>We hold ourselves to the highest standard and deliver what we promise.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Who is Backing Us -->
+    <div class="section">
+        <div class="container">
+            <h2>Who is Backing Us</h2>
+            <p>We are a venture-funded company, backed by leaders in sustainability and tech, making a huge impact across Africa.</p>
+            <div class="backers-grid">
+                <img src="mm.png" alt="GreenTech Logo"/>
+                <img src="gg.png" alt="EcoVentures Logo"/>
+                <img src="pp.png" alt="SustainX Logo"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- In the Media -->
+    <div class="section">
+        <div class="container">
+            <h2 style="text-align: left;">In the Media</h2>
+            <div class="media-list">
+                <div class="article-card">
+                    <h3>Karia Launches Eco-Friendly Delivery in East Africa</h3>
+                    <p>Karia’s electric vehicle fleet is transforming urban logistics with sustainable solutions.</p>
+                    <a href="#" target="_blank">READ MORE</a>
+                </div>
+                <div class="article-card">
+                    <h3>Green Logistics Startup Karia Secures Funding</h3>
+                    <p>Venture capital firms back Karia’s mission to reduce carbon emissions in deliveries.</p>
+                    <a href="#" target="_blank">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Karia</h4>
+                    <p>Sustainable deliveries, one package at a time.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Get in Touch</h4>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i><a href="#">123 Eco Lane, Blue City</a></p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i><a href="#">+1-800-BLUEEV</a></p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:support@karia.com">support@karia.com</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4>Join Karia</h4>
+                    <a href="#">Careers</a>
+                    <a href="#">Join as a Driver</a>
+                    <a href="#">Join as a Business</a>
+                    <a href="agent.html">Join as an Agent</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <a href="#">Terms and Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Karia for Business MOU</a>
+                    <a href="#">Account Deletion Policy</a>
+                    <a href="#">Awareness</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Download App</h4>
+                    <a href="#"><img src="1.png" alt="Google Play" class="badge"/></a>
+                    <a href="#"><img src="10.png" alt="App Store" class="badge"/></a>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon" style="background: #FF0000;">
+                    <i class="fa fa-youtube"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #25D366;">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #E1306C;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #3B5998;">
+                    <i class="fa fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #000;">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© Karia 2025, All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-btn" id="whatsappBtn">
+        <i class="fa fa-whatsapp"></i>
+    </div>
+
+    <!-- WhatsApp Modal -->
+    <div class="modal" id="whatsappModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">×</span>
+            <div class="modal-header">
+                <i class="fa fa-whatsapp"></i>
+                <h3>Contact Us on WhatsApp</h3>
+            </div>
+            <div class="modal-body">
+                <p>Select a service center to start chatting:</p>
+                <div class="service-center">
+                    <a href="https://wa.me/1234567890?text=Hello%20Karia%20Central%20Support" target="_blank">
+                        <i class="fa fa-whatsapp"></i>
+                        <span>Karia Central Support</span>
+                    </a>
+                </div>
+                <div class="service-center">
+                    <a href="https://wa.me/1234567891?text=Hello%20Karia%20North%20Branch" target="_blank">
+                        <i class="fa fa-whatsapp"></i>
+                        <span>Karia North Branch</span>
+                    </a>
+                </div>
+                <div class="service-center">
+                    <a href="https://wa.me/1234567892?text=Hello%20Karia%20South%20Branch" target="_blank">
+                        <i class="fa fa-whatsapp"></i>
+                        <span>Karia South Branch</span>
+                    </a>
+                </div>
+                <div class="powered-by">
+                    <img src="cc.png" alt="CloudKing Logo" />
+                    <span>POWERED BY CLOUDKING SYSTEMS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Dropdown toggle
+        document.querySelector('.dropdown-toggle').addEventListener('click', (e) => {
+            e.preventDefault();
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            dropdownMenu.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const dropdown = document.querySelector('.dropdown');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            if (!dropdown.contains(e.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // WhatsApp Modal Toggle
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const whatsappModal = document.getElementById('whatsappModal');
+        const closeModal = document.getElementById('closeModal');
+
+        whatsappBtn.addEventListener('click', () => {
+            whatsappModal.style.display = 'flex';
+        });
+
+        closeModal.addEventListener('click', () => {
+            whatsappModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', (e) => {
+            if (e.target === whatsappModal) {
+                whatsappModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
