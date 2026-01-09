@@ -152,18 +152,19 @@
     cursor: pointer;
     color: #000435;
 }
+
 .close-menu {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        font-size: 40px;
-        padding: 8px 14px;
-        line-height: 1;
-        color: #000435;
-        background: transparent;
-        border: none;
-        z-index: 1003;
-    }
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    background: none;
+    border: none;
+    font-size: 42px;
+    font-weight: bold;
+    color: #000435;
+    cursor: pointer;
+    z-index: 1002;
 }
 
         .agent-section {
@@ -943,6 +944,7 @@ textarea {
     </div>
 </div>
 
+<script src="scripts.js"></script>
 <script>
     // Hamburger menu toggle for mobile
     document.querySelector('.hamburger').addEventListener('click', () => {

@@ -140,7 +140,7 @@
 }
 
 .close-menu {
-    display: flex;
+    display: none;
     position: absolute;
     top: 15px;
     right: 60px;
@@ -309,6 +309,77 @@
             margin-bottom: 20px;
             font-family: 'Inter', sans-serif;
         }
+        .join-us {
+            padding: 60px 0;
+            text-align: center;
+            background: #fff;
+            position: relative;
+        }
+        .join-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, #007bff, #000435);
+        }
+        .join-us h2 {
+            color: #000435;
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: 600;
+            position: relative;
+        }
+        .join-us h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #007bff;
+            margin: 10px auto;
+        }
+
+        .service-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .service-item {
+            max-width: 300px;
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .service-item img {
+            width: 100px;
+            height: 100px;
+            animation: fadeInUp 1s ease-out forwards;
+            border-radius: 50%;
+            background: #f5f5f5;
+            padding: 10px;
+        }
+        .service-item h3 {
+            font-size: 24px;
+            color: #000435;
+            margin: 20px 0 10px;
+            font-weight: 600;
+        }
+        .service-item p {
+            font-size: 16px;
+            color: #666;
+            font-family: 'Inter', sans-serif;
+        }
+
+
         footer {
             background: #000435;
             color: #fff;
@@ -702,6 +773,58 @@
             </div>
         </div>
     </div>
+
+<!-- Services Section -->
+<div id="Our-Services" class="join-us">
+    <div class="container">
+        <h2>Delivery Types</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <img src="ec.JPG" alt="EV Car Icon"/>
+                <h3>Economy</h3>
+                <p>Lowest cost, flexible delivery time. Save more deliver later</p>
+            </div>
+            <div class="service-item">
+                <img src="st.JPG" alt="EV Bike Icon"/>
+                <h3>Standard</h3>
+                <p>Balanced price and delivery time. Reliable everyday delivery.</p>
+            </div>
+            <div class="service-item">
+                <img src="ex.JPG" alt="Package Icon"/>
+                <h3>Express</h3>
+                <p>Fast delivery, priority handling. Urgent, delivered fast</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Services Section -->
+<div id="Our-Services" class="join-us">
+    <div class="container">
+        <h2>Business Packages</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <img src="sta.JPG" alt="EV Car Icon"/>
+                <h2>STARTER</h2>
+                <h3>UGX 60,000/month</h3>
+                <p>Comes with atleast 50 deliveries per month. Includes all delivery types economy, standard and express - all at their respective costs. No dedicated riders. A business pays per month, receives email invoices.</p>
+            </div>
+            <div class="service-item">
+                <img src="grw.JPG" alt="EV Bike Icon"/>
+                <h2>GROWTH</h2>
+                <h3>UGX 150,000/month</h3>
+                <p>Comes with atleast 50 - 150 deliveries per month. Includes all delivery types economy, standard and express - all at their respective costs. Priority rider assignment. Faster dispatch SLA. Favors end of month billing, receives email invoices.</p>
+            </div>
+            <div class="service-item">
+                <img src="ent.JPG" alt="Package Icon"/>
+                <h2>ENTERPRISE</h2>
+                <h3>UGX 400,000/month</h3>
+                <p>Comes with 200+ deliveries per month. Includes all delivery types economy, standard and express - all at their discounted costs. Dedicated riders. SLA guarantees. Favors Monthly reconciliation, receives email invoices.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- Benefits Grid -->
     <div class="benefits-grid">
