@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Become an Agent - Karia</title>
+    <meta content="Become an Agent - Karia" property="og:title"/>
+    <meta content="Become an Agent - Karia" property="twitter:title"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link rel="icon" type="image/png" href="logo.png" /> <!-- Updated favicon placeholder -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Asap:regular,500,600,700", "Inter:100,200,300,regular,500,600,700,800,900"]
+            }
+        });
+    </script>
+    <style>
+        /* Inline CSS mimicking SafeBoda's style with responsive design */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Asap', sans-serif;
+            background-color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .navbar {
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+       .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .nav-link:hover {
+            color: #000435;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            min-width: 200px;
+            z-index: 1001;
+        }
+        .dropdown-menu.active {
+            display: block;
+        }
+        .dropdown-link {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+        .dropdown-link:hover {
+            color: #007bff; /* Blue for links, matching SafeBoda */
+        }
+        .dropdown-link.blue {
+            color: #007bff;
+        }
+        .country-flags {
+            display: flex;
+            gap: 10px;
+        }
+        .country-flag {
+            height: 20px;
+            border-radius: 50%;
+        }
+        .primary-btn {
+            background: #fff;
+            color: #000435;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            border: 2px solid #000435;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .primary-btn:hover {
+            background: #000435;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .primary-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255,255,255,0.1);
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        .primary-btn:hover::before {
+            width: 0;
+            height: 0;
+        }
+
+        /* Hamburger & Mobile Menu */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000435;
+}
+
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: #000435;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+        .agent-section {
+            background: linear-gradient(90deg, #fff 50%, #fff9ef 100%);
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .agent-section .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .agent-image {
+            max-width: 40%;
+        }
+        .agent-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .agent-content {
+            max-width: 50%;
+        }
+        .agent-content h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000435; /* Dark teal color from SafeBoda */
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .agent-content h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a3c34;
+            margin: 20px 0;
+        }
+        .agent-content p {
+            font-size: 16px;
+            color: #1a3c34;
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+        .actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .badge {
+            height: 54px;
+            border-radius: 10px;
+        }
+        footer {
+            background: #000435;
+            color: #fff;
+            padding: 40px 0;
+        }
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-column h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .footer-column a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+        .footer-column a:hover {
+            color: #f5a623;
+        }
+        .footer-column p {
+            font-size: 16px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-column .fa {
+            color: #fff; /* BlueSwift's primary color for icons */
+            font-size: 18px;
+        }
+        .footer-column .badge {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .social-icon .fa {
+            color: #fff;
+            font-size: 20px;
+        }
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #ccc;
+            font-family: 'Inter', sans-serif;
+        }
+        /* WhatsApp Button Styles */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1002;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        .whatsapp-btn .fa {
+            color: #fff;
+            font-size: 30px;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1003;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: #fff;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .modal-header .fa-whatsapp {
+            color: #25D366;
+            font-size: 24px;
+        }
+        .modal-header h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #000435;
+            font-weight: 600;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close-modal:hover {
+            color: #000435;
+        }
+        .modal-body {
+            padding: 20px 0;
+        }
+        .modal-body p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .service-center {
+            margin-bottom: 15px;
+        }
+        .service-center a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .service-center a:hover {
+            background: #e0e0e0;
+        }
+        .service-center .fa {
+            color: #25D366;
+            font-size: 20px;
+        }
+        .service-center span {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+        .powered-by {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 35px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #666;
+        }
+        .powered-by img {
+            width: 40px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        /* Form Section */
+.form-section {
+    position: relative;
+    padding: 140px 20px 100px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    margin-top: 20px;
+}
+
+.form-header {
+    background: linear-gradient(135deg, #010B13, #010B13);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.form-header h2 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    color: white !important;
+}
+
+.form-header p {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.form-body {
+    padding: 50px 60px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-full {
+    grid-column: 1 / -1;
+}
+
+/* Business conditional fields */
+.business-fields {
+    display: none;
+    grid-column: 1 / -1;
+    margin-top: 12px;
+    padding-top: 16px;
+    border-top: 1px dashed #e2e8f4;
+}
+
+.business-fields.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.business-field {
+    border-color: #fed7aa;
+    background-color: #fffbeb;
+}
+
+.business-field:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.12);
+}
+
+#categorySelect.business-selected {
+    border-color: #f97316;
+    background-color: #fffbeb;
+}
+
+/* Form inputs & button */
+input, select, textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f4;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #000435;
+    box-shadow: 0 0 0 4px rgba(0,4,53,0.08);
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #22C55E, #16A34A);
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 24px;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(34,197,94,0.3);
+}
+
+.message {
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 16px;
+    display: none;
+}
+
+.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.error   { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+
+        /* Responsive Design */
+@media (max-width: 1024px) {
+    .agent-content h1 {
+        font-size: 28px;
+    }
+    .agent-content h2 {
+        font-size: 20px;
+    }
+    .agent-content p {
+        font-size: 14px;
+    }
+    .agent-content, .agent-image {
+        max-width: 100%;
+    }
+    .agent-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .agent-image {
+        margin-bottom: 30px;
+    }
+    .actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* ── Your original rules (unchanged) ── */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-link, .primary-btn {
+        margin: 10px 0;
+    }
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+    .dropdown-menu.active {
+        display: block;
+    }
+    .country-flags {
+        justify-content: center;
+    }
+    .hamburger {
+        display: block;
+    }
+    .close-menu {
+        display: block;
+    }
+    .agent-section {
+        padding: 80px 0;
+        min-height: auto;
+    }
+    .agent-content h1 {
+        font-size: 24px;
+    }
+    .agent-content h2 {
+        font-size: 18px;
+    }
+    .agent-content p {
+        font-size: 14px;
+    }
+    .badge {
+        height: 48px;
+    }
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-btn .fa {
+        font-size: 25px;
+    }
+
+    /* ── Added / Improved for better mobile menu & form ── */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        padding: 80px 30px 40px;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.35s ease;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+
+    .close-menu {
+        display: block;           /* Show close button on mobile */
+    }
+
+    .form-section {
+        padding-top: 120px;       /* Reduced top padding for smaller screens */
+        padding-bottom: 80px;
+    }
+
+    .form-body {
+        padding: 40px 30px;       /* More comfortable padding on tablets/mobile */
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;   /* Stack fields vertically */
+        gap: 16px;
+    }
+
+    .business-fields.active {
+        grid-template-columns: 1fr;   /* Also stack business fields */
+        gap: 16px;
+    }
+
+    .submit-btn {
+        padding: 15px 24px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* ── Your original rules (unchanged) ── */
+    .agent-content h1 {
+        font-size: 20px;
+    }
+    .agent-content h2 {
+        font-size: 16px;
+    }
+    .agent-content p {
+        font-size: 12px;
+    }
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .badge {
+        height: 40px;
+    }
+    .footer-column {
+        min-width: 100%;
+        text-align: center;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+    .modal-header h3 {
+        font-size: 18px;
+    }
+    .modal-body p {
+        font-size: 14px;
+    }
+    .service-center span {
+        font-size: 14px;
+    }
+    .powered-by {
+        font-size: 15px;
+    }
+    .powered-by img {
+        width: 25px;
+        height: 20px;
+    }
+
+    /* ── Added small-screen refinements ── */
+    .form-header h2 {
+        font-size: 28px;
+    }
+
+    .form-header p {
+        font-size: 15px;
+    }
+
+    .form-section {
+        padding-top: 110px;        /* Slightly less on very small phones */
+    }
+
+    .form-body {
+        padding: 35px 20px;
+    }
+}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container">
+            <a href="#" class="w-nav-brand">
+                <img src="karia.png" alt="Karia Logo" style="height: 60px;"/>
+            </a>
+
+            <button class="hamburger" aria-label="Open menu">☰</button>
+
+            <nav class="nav-menu">
+                <!-- Important: Close button for mobile -->
+                <button class="close-menu" aria-label="Close menu">×</button>
+
+                <a href="index.html" class="nav-link"><b>Home</b></a>
+                <a href="business.html" class="nav-link"><b>Karia for Business</b></a>
+                <a href="about.html" class="nav-link"><b>About Us</b></a>
+                <a href="faq.html" class="nav-link"><b>FAQ</b></a>
+
+                <div class="dropdown">
+                    <div class="nav-link dropdown-toggle"><b>Join Us</b></div>
+                    <div class="dropdown-menu">
+                        <a href="career.html" class="dropdown-link"><b>Careers</b></a>
+                        <a href="driver.html" class="dropdown-link"><b>Driver</b></a>
+                        <a href="agent.html" class="dropdown-link"><b>Agent</b></a>
+                        <a href="business.html" class="dropdown-link"><b>Karia for Business</b></a>
+                    </div>
+                </div>
+
+                <div class="country-flags">
+                    <img src="12.png" alt="Country Flag" class="country-flag"/>
+                </div>
+
+                <a href="#" class="primary-btn">Download App</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- COMPACT FORM -->
+    <section class="form-section" id="contact-form">
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Contact Us</h2>
+                <p>Fill in your details — we reply within 2 hours</p>
+            </div>
+            <div class="form-body">
+                <form id="contactForm" action="https://formspree.io/f/xanrjpol" method="POST" novalidate>
+                    <div class="form-grid">
+                        <input type="text" name="first_name" placeholder="First Name" required>
+                        <input type="text" name="last_name" placeholder="Last Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="tel" name="phone" placeholder="Phone (+256...)" required>
+
+                        <select name="service" id="categorySelect" required>
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="Business">Business</option>
+                            <option value="Agent">Agent</option>
+                            <option value="Driver">Driver</option>
+                        </select>
+
+                        <!-- Business-only fields (hidden by default) -->
+                        <div class="business-fields" id="businessFields">
+                            <input type="text" name="business_name" id="businessName"
+                                   placeholder="Business Name (Required for Business)"
+                                   class="business-field">
+                            <input type="email" name="business_email" id="businessEmail"
+                                   placeholder="Business Email (Required for Business)"
+                                   class="business-field">
+                        </div>
+
+                        <input type="text" name="venue" placeholder="Location" required>
+                        <input type="text" name="city_state" placeholder="City/District">
+
+                        <textarea name="message" placeholder="Tell us about your category / inquiry..."
+                                  class="form-full" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div id="successMsg" class="message success">Thank you! We'll contact you soon.</div>
+                    <div id="errorMsg" class="message error">Please fix the errors above.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Karia</h4>
+                    <p>Sustainable deliveries, one package at a time.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Get in Touch</h4>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>Kampala City</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i>+256754176809 / +256762192420</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i>support@karia.com</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Join Karia</h4>
+                    <a href="career.html">Careers</a>
+                    <a href="driver.html">Join as a Driver</a>
+                    <a href="business.html">Join as a Business</a>
+                    <a href="agent.html">Join as an Agent</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <a href="#">Terms and Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="business.html">Karia for Business MOU</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Download App</h4>
+                    <a href="#"><img src="1.png" alt="Google Play" class="badge"/></a>
+                    <a href="#"><img src="10.png" alt="App Store" class="badge"/></a>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon" style="background: #FF0000;">
+                    <i class="fa fa-youtube"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #25D366;">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #E1306C;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #3B5998;">
+                    <i class="fa fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon" style="background: #000;">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© Karia 2026, All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+
+<!-- WhatsApp Button -->
+<div class="whatsapp-btn" id="whatsappBtn">
+    <i class="fa fa-whatsapp"></i>
+</div>
+
+<!-- WhatsApp Modal -->
+<div class="modal" id="whatsappModal">
+    <div class="modal-content">
+        <span class="close-modal" id="closeModal">×</span>
+        <div class="modal-header">
+            <i class="fa fa-whatsapp"></i>
+            <h3>Contact Us on WhatsApp</h3>
+        </div>
+        <div class="modal-body">
+            <p>Start chatting with us:</p>
+            <div class="service-center">
+                <a href="https://wa.me/1234567890?text=Hello%20Karia%20Central%20Support" target="_blank">
+                    <i class="fa fa-whatsapp"></i>
+                    <span>Karia Central Support</span>
+                </a>
+            </div>
+            <div class="service-center">
+                <a href="https://wa.me/256754176809?text=Hello%20Karia%20Management%20Office" target="_blank">
+                    <i class="fa fa-whatsapp"></i>
+                    <span>Karia Management</span>
+                </a>
+            </div>
+            <div class="service-center">
+                <a href="https://wa.me/256762192420?text=Hello%20Karia%20Operations%20Office" target="_blank">
+                    <i class="fa fa-whatsapp"></i>
+                    <span>Karia Operations</span>
+                </a>
+            </div>
+            <div class="powered-by">
+                <img src="cc.png" alt="CloudKing Logo" />
+                <span>POWERED BY CLOUDKING SYSTEMS</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Hamburger menu toggle for mobile
+    document.querySelector('.hamburger').addEventListener('click', () => {
+        document.querySelector('.nav-menu').classList.toggle('active');
+    });
+
+    // Dropdown toggle for "Join Us"
+    document.querySelector('.dropdown-toggle').addEventListener('click', (e) => {
+        e.preventDefault();
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        dropdownMenu.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        if (!dropdown.contains(e.target)) {
+            dropdownMenu.classList.remove('active');
+        }
+    });
+
+    // Basic interactivity for buttons
+    document.querySelectorAll('.primary-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('This is a demo action!');
+        });
+    });
+
+    // WhatsApp Modal Toggle
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const whatsappModal = document.getElementById('whatsappModal');
+    const closeModal = document.getElementById('closeModal');
+
+    whatsappBtn.addEventListener('click', () => {
+        whatsappModal.style.display = 'flex';
+    });
+
+    closeModal.addEventListener('click', () => {
+        whatsappModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', (e) => {
+        if (e.target === whatsappModal) {
+            whatsappModal.style.display = 'none';
+        }
+    });
+
+    // Show/hide business fields based on category selection
+document.addEventListener('DOMContentLoaded', () => {
+    const categorySelect = document.getElementById('categorySelect');
+    const businessFields = document.getElementById('businessFields');
+    const businessName = document.getElementById('businessName');
+    const businessEmail = document.getElementById('businessEmail');
+
+    function toggleBusinessFields() {
+        const isBusiness = categorySelect.value === 'Business';
+
+        if (isBusiness) {
+            businessFields.classList.add('active');
+            businessName.required = true;
+            businessEmail.required = true;
+            categorySelect.classList.add('business-selected');
+        } else {
+            businessFields.classList.remove('active');
+            businessName.required = false;
+            businessEmail.required = false;
+            categorySelect.classList.remove('business-selected');
+
+            // Optional: clear values when hidden
+            // businessName.value = '';
+            // businessEmail.value = '';
+        }
+    }
+
+    // Run on page load (in case of browser back/forward)
+    toggleBusinessFields();
+
+    // Listen for changes
+    categorySelect.addEventListener('change', toggleBusinessFields);
+});
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const closeBtn = document.querySelector('.close-menu');
+
+    // Open menu
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.add('active');
+        document.body.style.overflow = 'hidden'; // prevent background scroll
+    });
+
+    // Close menu - multiple convenient ways
+    const closeMenu = () => {
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeMenu);
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // Close with Escape key (accessibility + convenience)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>

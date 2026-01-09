@@ -145,13 +145,26 @@
             height: 0;
         }
         .hamburger {
-            display: none;
-            font-size: 24px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #000435;
-        }
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000435;
+}
+
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: #000435;
+    cursor: pointer;
+    z-index: 1002;
+}
         /* Advertisement Slider Styles */
         .ad-slider {
             width: 100vw;
@@ -675,6 +688,9 @@
             .hamburger {
                 display: block;
             }
+            .close-menu {
+        display: block;
+    }
             .hero-section {
                 padding: 80px 0;
                 min-height: auto;
@@ -796,12 +812,18 @@
                 <a href="#" class="w-nav-brand">
                     <img src="karia.png" alt="Karia Logo" style="height: 60px;"/>
                 </a>
-                <button class="hamburger">☰</button>
+
+                <button class="hamburger" aria-label="Open menu">☰</button>
+
                 <nav class="nav-menu">
+                    <!-- Important: Close button for mobile -->
+                    <button class="close-menu" aria-label="Close menu">×</button>
+
                     <a href="index.html" class="nav-link"><b>Home</b></a>
                     <a href="business.html" class="nav-link"><b>Karia for Business</b></a>
                     <a href="about.html" class="nav-link"><b>About Us</b></a>
                     <a href="faq.html" class="nav-link"><b>FAQ</b></a>
+
                     <div class="dropdown">
                         <div class="nav-link dropdown-toggle"><b>Join Us</b></div>
                         <div class="dropdown-menu">
@@ -811,9 +833,11 @@
                             <a href="business.html" class="dropdown-link"><b>Karia for Business</b></a>
                         </div>
                     </div>
+
                     <div class="country-flags">
                         <img src="12.png" alt="Country Flag" class="country-flag"/>
                     </div>
+
                     <a href="#" class="primary-btn">Download App</a>
                 </nav>
             </div>
@@ -850,8 +874,8 @@
         <div id="Hero-Section" class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Eco-Friendly Deliveries Redefined</h1>
-                    <p>Fast, sustainable deliveries with our electric vehicle fleet.</p>
+                    <h1>Fast Friendly Deliveries Redefined</h1>
+                    <p>Fast, sustainable deliveries with our courier fleet.</p>
                     <div class="actions">
                         <a href="#" target="_blank">
                             <img src="1.png" alt="Google Play" class="badge"/>
@@ -862,7 +886,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="11.png" alt="App Screens"/>
+                    <img src="kar.png" alt="App Screens"/>
                 </div>
             </div>
         </div>
@@ -880,13 +904,13 @@
                 <div class="service-item">
                     <img src="3.png" alt="Driver Icon"/>
                     <h3>Become a Driver</h3>
-                    <p>Join our community of EV delivery drivers.</p>
+                    <p>Join our community of Karia drivers.</p>
                     <a href="driver.html" class="primary-btn">Become a Driver</a>
                 </div>
                 <div class="service-item">
                     <img src="13.png" alt="Agent Icon"/>
                     <h3>Become an Agent</h3>
-                    <p>Make our community of EV delivery thrive.</p>
+                    <p>Make our community of Karia thrive.</p>
                     <a href="agent.html" class="primary-btn">Become an Agent</a>
                 </div>
             </div>
@@ -899,18 +923,18 @@
                 <div class="service-grid">
                     <div class="service-item">
                         <img src="9.png" alt="EV Car Icon"/>
-                        <h3>EV Car Delivery</h3>
-                        <p>Fast deliveries with electric cars.</p>
+                        <h3>Karia Car Delivery</h3>
+                        <p>Fast deliveries with Karia cars.</p>
                     </div>
                     <div class="service-item">
                         <img src="7.png" alt="EV Bike Icon"/>
-                        <h3>EV Bike Delivery</h3>
-                        <p>Quick parcel drops with electric bikes.</p>
+                        <h3>Karia Bike Delivery</h3>
+                        <p>Quick parcel drops with our couriers.</p>
                     </div>
                     <div class="service-item">
                         <img src="8.png" alt="Package Icon"/>
                         <h3>Send Package</h3>
-                        <p>Eco-friendly package delivery service.</p>
+                        <p>Friendly package delivery service.</p>
                     </div>
                 </div>
             </div>
@@ -926,9 +950,9 @@
                     </div>
                     <div class="footer-column">
                         <h4>Get in Touch</h4>
-                        <p><i class="fa fa-map-marker" aria-hidden="true"></i><a href="#">123 Eco Lane, Blue City</a></p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i><a href="#">+1-800-BLUEEV</a></p>
-                        <p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:support@karia.com">support@karia.com</a></p>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i>Kampala City</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i>+256754176809 / +256762192420</p>
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i>support@karia.com</p>
                     </div>
                     <div class="footer-column">
                         <h4>Join Karia</h4>
@@ -943,8 +967,6 @@
                         <a href="#">Privacy Policy</a>
                         <a href="faq.html">FAQ</a>
                         <a href="business.html">Karia for Business MOU</a>
-                        <a href="#">Account Deletion Policy</a>
-                        <a href="#">Awareness</a>
                     </div>
                     <div class="footer-column">
                         <h4>Download App</h4>
@@ -971,7 +993,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>© Karia 2025, All rights reserved.</p>
+                <p>© Karia 2026, All rights reserved.</p>
             </div>
         </footer>
 
@@ -989,7 +1011,7 @@
                     <h3>Contact Us on WhatsApp</h3>
                 </div>
                 <div class="modal-body">
-                    <p>Select a service center to start chatting:</p>
+                    <p>Start chatting with us:</p>
                     <div class="service-center">
                         <a href="https://wa.me/1234567890?text=Hello%20Karia%20Central%20Support" target="_blank">
                             <i class="fa fa-whatsapp"></i>
@@ -997,15 +1019,15 @@
                         </a>
                     </div>
                     <div class="service-center">
-                        <a href="https://wa.me/1234567891?text=Hello%20Karia%20North%20Branch" target="_blank">
+                        <a href="https://wa.me/256754176809?text=Hello%20Karia%20Management%20Office" target="_blank">
                             <i class="fa fa-whatsapp"></i>
-                            <span>Karia North Branch</span>
+                            <span>Karia Management</span>
                         </a>
                     </div>
                     <div class="service-center">
-                        <a href="https://wa.me/1234567892?text=Hello%20Karia%20South%20Branch" target="_blank">
+                        <a href="https://wa.me/256762192420?text=Hello%20Karia%20Operations%20Office" target="_blank">
                             <i class="fa fa-whatsapp"></i>
-                            <span>Karia South Branch</span>
+                            <span>Karia Operations</span>
                         </a>
                     </div>
                     <div class="powered-by">
@@ -1111,6 +1133,40 @@
         document.querySelector('.ad-slider').addEventListener('mouseout', () => {
             autoSlide = setInterval(nextSlide, slideInterval);
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const closeBtn = document.querySelector('.close-menu');
+
+    // Open menu
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.add('active');
+        document.body.style.overflow = 'hidden'; // prevent background scroll
+    });
+
+    // Close menu - multiple convenient ways
+    const closeMenu = () => {
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeMenu);
+
+    // Click outside to close
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // Close with Escape key (accessibility + convenience)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+});
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
