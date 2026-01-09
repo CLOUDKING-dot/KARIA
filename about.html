@@ -561,14 +561,21 @@
         margin: 20px 0;
         justify-content: center;
     }
+    .dropdown {
+        width: 100%;
+        max-width: 360px;
+    }
 
     .dropdown-menu {
-        position: static;
+        position: relative;
         box-shadow: none;
         background: transparent;
         padding: 0;
         margin: 8px 0;
         text-align: center;
+    }
+    .dropdown-menu.active {
+        display: block !important;
     }
 
     /* Your other existing mobile styles remain unchanged */
